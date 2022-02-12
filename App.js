@@ -4,25 +4,28 @@ import { createStackNavigator } from 'react-navigation-stack';
 
 import IndexScreen from './src/screens/IndexScreen';
 import { Provider } from './src/context/BlogContext';
+import ShowScreen from './src/screens/ShowScreen';
 
+// Route Configure object (Index and Show)
 const navigator = createStackNavigator(
-  {
-    Index: IndexScreen,
-  },
-  {
-    initialRouteName: 'Index',
-    defaultNavigationOptions: {
-      title: 'Blogs',
-    },
-  }
+	{
+		Index: IndexScreen,
+    Show: ShowScreen
+	},
+	{
+		initialRouteName: 'Index',
+		defaultNavigationOptions: {
+			title: 'Blogs'
+		}
+	}
 );
 
 const App = createAppContainer(navigator);
 
 export default () => {
-  return (
-    <Provider>
-      <App />
-    </Provider>
-  );
+	return (
+		<Provider>
+			<App />
+		</Provider>
+	);
 };
